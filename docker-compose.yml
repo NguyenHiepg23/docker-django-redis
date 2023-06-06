@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+    volumes:
+      - hmm:/usr/src/app
+
+    
+  redis:
+    image: redis
+    restart: always
+    ports:
+      - "6377:6379"
+    volumes:
+      - dj_redis_data:/data
+
+volumes:
+  hmm:
+  dj_redis_data:

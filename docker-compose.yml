@@ -15,7 +15,7 @@ services:
     image: redis
     restart: always
     ports:
-      - "6377:6379"
+      - "6379:6379"
     volumes:
       - dj_redis_data:/data
 
